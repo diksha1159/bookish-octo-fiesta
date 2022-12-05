@@ -1,0 +1,14 @@
+## CI/CD Pipeline using Git,Jenkins and Maven
+
+### Step1: Configure Jenkins Server
+
+* First we need to launch an EC2 instance with Keypair
+
+```shell
+instanceType: t2.micro
+AMI: Amazon Linux-2
+Security Group: 
+22, SSH
+8080, Custom TCP
+```
+
