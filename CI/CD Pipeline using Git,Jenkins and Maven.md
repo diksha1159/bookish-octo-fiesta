@@ -22,7 +22,7 @@ Security Group:
 * Next we need to install `Java`,`Jenkins`, `Maven` to our server.
 * First switch to root user `sudo su -` and update the packages first `sudo yum update -y`
 
-
+![1670272758823](image/readme/1670272758823.png)
 
 
 ```shell
