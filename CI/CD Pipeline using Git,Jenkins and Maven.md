@@ -111,4 +111,48 @@ The build should be successful and should look like this
 ![image](https://user-images.githubusercontent.com/76660222/206861128-47817313-316b-44ba-9d0a-6822af3d299b.png)
 
 
+### Step3: Install and Configure Maven in Jenkins Server
 
+* We need to install MAVEN in Jenkins server.
+
+```shell
+cd /opt
+sudo wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz 
+tar -xvzf apache-maven-3.8.6-bin.tar.gz 
+mv apache-maven-3.8.6-bin maven
+```
+
+* Next configure `M2_HOME` and `M2`(binary directory) environment variables and add them to the `PATH` so that we can run `maven` commands in any directory. You can search where is your JVM by using t `find / name java-11*`
+* Now you need to edit .bash_profile to add these variables to path and save
+
+```shell
+M2_HOME=/opt/maven
+M2=/opt/maven/bin
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.16.0.8-1.amzn2.0.1.x86_64
+
+PATH=$PATH:$HOME/bin:$M2_HOME:$M2:$JAVA_HOME
+export PATH
+```
+
+* To apply the changes we have made to .bash_profile, either we can logout and log back in or run `source .bash_profile` command. It will upload the changes.
+
+![image](https://user-images.githubusercontent.com/76660222/206863077-7e0dc7f2-e018-43da-bebe-3d12b1520717.png)
+
+![image](https://user-images.githubusercontent.com/76660222/206863110-8a4f8563-84ce-4771-b78c-6f7e208edd37.png)
+
+
+### Step4: Integrate Maven with Jenkins
+
+* Now go to `Manage Jenkins` and `Global Tool Configuration` to add path for Java and Maven.
+* refer this article https://subscription.packtpub.com/book/networking-and-servers/9781786465702/2/ch02lvl1sec16/configuring-java-and-maven-in-jenkins#:~:text=Configuring%20Maven,That's%20it!
+
+* We can configure a `Maven Project` to build our Code, go to `Dashboard` -> `NewItem`
+
+```shell
+Name = FirstMavenProject
+Type: Maven Project
+Root Pom: pom.xml
+Goals and options: clean install
+```
+
+* now we can go to `/var/lib/jenkins/workspace/FirstMavenProject/webapp/target` to see our build artifact webapp.war file.
