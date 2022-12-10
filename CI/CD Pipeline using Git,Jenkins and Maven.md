@@ -103,4 +103,12 @@ Save -> Build Now
 
 ![image](https://user-images.githubusercontent.com/76660222/205747914-b0d5fcf4-a00c-416f-a697-d5abedfeb7da.png)
 
+![image](https://user-images.githubusercontent.com/76660222/206860960-88a2e83a-9205-4fa9-9baf-2b4c12593e04.png)
+
+The build should be successful and should look like this
+* You can check the Workspace, if your project successfully downloadded from GitHub. In Jenkins server, `/var/lib/jenkins/workspace/` you can see the jobs you have run so far.
+
+![image](https://user-images.githubusercontent.com/76660222/206861128-47817313-316b-44ba-9d0a-6822af3d299b.png)
+
+
 
