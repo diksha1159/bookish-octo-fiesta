@@ -122,7 +122,7 @@ tar -xvzf apache-maven-3.8.6-bin.tar.gz
 mv apache-maven-3.8.6-bin maven
 ```
 
-* Next configure `M2_HOME` and `M2`(binary directory) environment variables and add them to the `PATH` so that we can run `maven` commands in any directory. You can search where is your JVM by using t `find / name java-11*`
+* Next configure `M2_HOME` and `M2`(binary directory) environment variables and add them to the `PATH` so that we can run `maven` commands in any directory. You can search where is your JVM by using `find / name java-11*`
 * Now you need to edit .bash_profile to add these variables to path and save
 
 ```shell
@@ -156,3 +156,5 @@ Goals and options: clean install
 ```
 
 * now we can go to `/var/lib/jenkins/workspace/FirstMavenProject/webapp/target` to see our build artifact webapp.war file.
+
+
